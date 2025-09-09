@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Compliance Frameworks</title>
+</head>
+<body>
+  <main class="container-fluid py-3">
+
+    <!-- Header -->
+    <div class="bk-header d-flex align-items-center justify-content-between mb-3">
+      <div  class="d-flex align-items-center justify-content-between">
+        <img class="me-3" src="assets/appLogo.svg" alt="">
+        <div class="header-title-container">
+            <h1 class="mb-0 header-title">Compliance Frameworks</h1>
+            <div class="header-subtitle">
+              <span>Admin</span>
+              <span class="header-subtitle-seperator">></span>
+              <span>Compliance Frameworks</span>
+            </div>
+        </div>
+      </div>
+      <div class="d-flex gap-2 header-buttons">
+        <button type="button" class="btn btn-light btn-sm">? Help</button>
+        <button type="button" class="btn btn-success btn-sm" id="add-custom-framework">+ New Custom Framework</button>
+      </div>
+      
+      <!-- Hamburger Menu Button -->
+      <button class="hamburger-btn" type="button" id="hamburger-toggle">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Header Dropdown Menu -->
+    <div class="header-dropdown" id="header-dropdown">
+      <div class="header-dropdown-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center py-3">
+                <button type="button" class="btn btn-light btn-sm">? Help</button>
+                <button type="button" class="btn btn-success btn-sm" id="add-custom-framework-mobile">+ New Custom Framework</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Page Layout -->
+    <div class="shell">
+    <!--Left Sidebar -->
+      <aside class="shell__sidebar">
+
+
+      </aside>
+
+      <!-- Content -->
+      <section class="shell__content">
+        <div class="shell__content-inner">
+          <div id="table-wrap" class="w-100 h-100"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal fade" id="customFrameworkModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content p-2">
+          <div class="modal-header border-0">
+            <div>
+              <h5 class="modal-title d-flex align-items-center gap-2">
+                Add New Framework <span id="modal-step-indicator" class="bk-step-indicator"></span>
+              </h5>
+              <p class="text-muted mb-0 mt-1">Please fill in the details of the new framework.</p>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="stepper-container"></div>
+
+            <div id="alert-container" class="bk-alert">You can 1 Enterprice Framework license available.</div>
+            
+            <!-- Step 1: Form Content -->
+            <div id="step-1-content" class="step-content">
+              <div class="row gy-3 gx-2">
+                <div class="col-md-6">
+                  <div class="bk-form-section">
+                    <div id="f-name"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="bk-form-section">
+                    <div id="f-shortname"></div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="bk-form-section d-flex align-items-center justify-content-between">
+                    <div class="me-2">
+                      <label class="form-label d-block mb-1">Upload Framework Logo</label>
+                    </div>
+                    <input id="f-logo" type="checkbox" class="bk-checkbox" aria-label="Upload Framework Logo">
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="bk-form-section">
+                    <div id="f-desc"></div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="bk-form-section">
+                    <div class="me-2">
+                      <label class="form-label d-block mb-1">Upload Template</label>
+                    </div>
+                    <input id="f-template" type="file" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Table Content -->
+            <div id="step-2-content" class="step-content" style="display: none;">
+              <div id="modal-table-container"></div>
+            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <!-- Step 1 Footer -->
+            <div id="step-1-footer" class="step-footer">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" id="f-next" class="btn btn-success">Next › Control Items</button>
+            </div>
+            
+            <!-- Step 2 Footer -->
+            <div id="step-2-footer" class="step-footer" style="display: none;">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" id="f-previous" class="btn btn-light">Previous Step</button>
+              <button type="button" id="f-add-control" class="btn btn-success">+ Add Control Items</button>
+              <button type="button" id="f-save" class="btn btn-success">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
